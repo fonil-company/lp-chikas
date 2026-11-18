@@ -111,11 +111,11 @@
   .headline-group {
     order: 1;
     display: grid;
-    grid-template-columns: 104px minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) 104px;
     align-items: center;
     gap: 18px;
   }
-  .headline-group h1 { grid-column: 2; grid-row: 1; font-size: clamp(44px, 7.2vw, 60px); margin: 0; }
+  .headline-group h1 { grid-column: 1; grid-row: 1; font-size: clamp(48px, 7.7vw, 64px); margin: 0; }
   h1 .last-line { display: block; }
   .headline-small {
     display: table;
@@ -136,14 +136,14 @@
   .mobile-price {
     display: block;
     position: relative;
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 1;
     top: auto;
     right: auto;
     width: 100%;
     padding: 9px 5px 11px;
     border-width: 2px;
-    transform: rotate(-6deg);
+    transform: rotate(6deg);
     box-shadow: 0 0 0 3px #fffef5, 2px 3px 0 3px var(--ink);
   }
   .mobile-price > span:first-child { font-size: 14px; -webkit-text-stroke: 1px var(--ink); }
@@ -162,8 +162,8 @@
   .header { height: 64px; }
   .hero { padding-top: 18px; gap: 16px; }
   .eyebrow { font-size: 8px; letter-spacing: 1px; }
-  .headline-group { grid-template-columns: clamp(76px, 21vw, 104px) minmax(0, 1fr); gap: 14px; }
-  .headline-group h1 { font-size: clamp(30px, 9.4vw, 49px); line-height: 1.06; letter-spacing: -.3px; }
+  .headline-group { grid-template-columns: minmax(0, 1fr) clamp(76px, 20vw, 96px); gap: 12px; }
+  .headline-group h1 { font-size: clamp(32px, 10.1vw, 54px); line-height: 1.02; letter-spacing: -.3px; }
   .headline-small { font-size: clamp(18px, 5.1vw, 25px); padding: 5px 8px 7px; }
   .mobile-price { padding: 8px 3px 10px; }
   .mobile-price > span:first-child { display: block; font-size: 12px; line-height: 1.1; }
