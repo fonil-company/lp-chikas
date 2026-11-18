@@ -1,3 +1,3 @@
-// Configure um endpoint público que aceite POST JSON e responda com HTTP 2xx.
-// Não coloque tokens ou segredos neste arquivo, pois ele é acessível pelo navegador.
-window.CHIKAS_CONFIG = Object.freeze({ leadEndpoint: '' });
+// O formulário envia para o próprio servidor (server.mjs), que repassa ao CRM.
+// O token do CRM fica na variável de ambiente CRM_WEBHOOK_URL, nunca neste arquivo.
+window.CHIKAS_CONFIG = Object.freeze({ leadEndpoint: '/api/lead' });
