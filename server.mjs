@@ -7,7 +7,8 @@ const root = fileURLToPath(new URL('./dist/', import.meta.url));
 const types = { '.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.svg':'image/svg+xml','.jpg':'image/jpeg','.png':'image/png','.woff2':'font/woff2','.json':'application/json' };
 const crmUrl = process.env.CRM_WEBHOOK_URL;
 if (!crmUrl) console.warn('CRM_WEBHOOK_URL não definida: os cadastros do formulário serão recusados.');
-const states = new Set('AC AL AP AM BA CE DF ES GO MA MT MS MG PA PB PR PE PI RJ RN RS RO RR SC SP SE TO'.split(' '));
+const citiesSource = await readFile(new URL('cities.js', new URL('./dist/', import.meta.url)), 'utf8');
+const cities = Object.fromEntries(Object.entries(JSON.parse(citiesSource.slice(citiesSource.indexOf('{'), citiesSource.lastIndexOf('}') + 1))).map(([uf, list]) => [uf, new Set(list)]));
 const json = (res, status, body) => res.writeHead(status, {'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'}).end(JSON.stringify(body));
 
 async function readBody(req) {
@@ -30,7 +31,7 @@ function toCrmLead(data) {
     state: text(data.state, 2).toUpperCase(),
     document: String(data.cnpj ?? '').toUpperCase().replace(/[^A-Z0-9]/g, ''),
   };
-  const valid = lead.name.length >= 2 && lead.supermarket.length >= 2 && lead.city.length >= 2 && states.has(lead.state)
+  const valid = lead.name.length >= 2 && lead.supermarket.length >= 2 && cities[lead.state]?.has(lead.city) === true
     && /^[1-9]{2}(?:9\d{8}|[2-5]\d{7})$/.test(lead.phone) && /^[A-Z0-9]{12}\d{2}$/.test(lead.document);
   if (!valid) return null;
   // O CRM não tem campo de empresa: o supermercado vai junto do nome para não se perder.

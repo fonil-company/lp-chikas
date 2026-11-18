@@ -15,6 +15,15 @@ cnpj.addEventListener('input', () => {
   cnpj.value = n.replace(/^(.{2})(.)/, '$1.$2').replace(/^(.{6})(.)/, '$1.$2').replace(/^(.{10})(.)/, '$1/$2').replace(/^(.{15})(.)/, '$1-$2');
   cnpj.setCustomValidity('');
 });
+const state = form.elements.state;
+const city = form.elements.city;
+state.addEventListener('change', () => {
+  const list = window.CHIKAS_CITIES?.[state.value] || [];
+  city.replaceChildren(new Option('Selecione sua cidade', ''), ...list.map(name => new Option(name)));
+  city.options[0].disabled = true;
+  city.selectedIndex = 0;
+  city.disabled = !list.length;
+});
 function validCnpj(value) {
   const n = value.replace(/[^A-Z0-9]/g, '');
   if (!/^[A-Z0-9]{12}\d{2}$/.test(n) || /^(\d)\1{13}$/.test(n)) return false;
@@ -31,7 +40,7 @@ form.addEventListener('submit', async event => {
   const number = digits(phone.value);
   phone.setCustomValidity(/^[1-9]{2}(?:9\d{8}|[2-5]\d{7})$/.test(number) ? '' : 'Informe um WhatsApp válido com DDD.');
   cnpj.setCustomValidity(validCnpj(cnpj.value) ? '' : 'Confira o CNPJ do estabelecimento.');
-  for (const name of ['name','supermarket','city']) {
+  for (const name of ['name','supermarket']) {
     const input = form.elements[name];
     input.value = input.value.trim();
   }

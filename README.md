@@ -43,6 +43,8 @@ O formulário envia os dados para `POST /api/lead` no próprio `server.mjs`. O s
 
 Campos enviados ao CRM: `name` (nome + supermercado, porque o CRM não tem campo de empresa), `phone`, `document`/`cnpj`, `city`, `state` e `company`. A tela de sucesso aparece só quando o CRM responde HTTP 2xx. As falhas ficam registradas no log do servidor.
 
+Região atendida: todo o Piauí e a mesorregião Sul Maranhense (IBGE). O visitante escolhe a UF (PI ou MA) e depois a cidade numa lista. A lista fica em `public/cities.js`, e o servidor recusa cidades fora dela.
+
 ## Créditos
 
 Copy e direção visual fornecidas pelo usuário. Fotos obtidas no catálogo oficial https://www.chikas.com.br, com versões de fundo transparente editadas via ImageGen. Fontes Barlow Condensed e DM Sans hospedadas localmente. Assinatura tipográfica e símbolo floral recriados a partir da referência visual.
