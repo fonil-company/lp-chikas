@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffda00">
+  <meta name="description" content="Abasteça seu supermercado com Chikas a preço de fábrica. Conheça as linhas Desliza Liso e Livre Leve & Solto. Pedido mínimo de R$ 300 para compras com CNPJ.">
+  <title>Chikas | Revenda no seu supermercado</title>
+  <link rel="icon" type="image/svg+xml" href="assets/flower.svg">
+  <link rel="stylesheet" href="assets/fonts.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#cadastro">Ir para o formulário</a>
+  <svg class="svg-definitions" aria-hidden="true"><defs><symbol id="flower" viewBox="0 0 100 100"><path id="petal" d="M50 47C41 34 34 20 39 11C43 2 57 2 61 11C66 20 59 34 50 47Z"/><use href="#petal" transform="rotate(60 50 50)"/><use href="#petal" transform="rotate(120 50 50)"/><use href="#petal" transform="rotate(180 50 50)"/><use href="#petal" transform="rotate(240 50 50)"/><use href="#petal" transform="rotate(300 50 50)"/></symbol><symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol></defs></svg>
+  <div class="page-shell">
+    <header class="header wrap">
+      <a class="brand" href="#inicio" aria-label="Chikas cosméticos — início"><svg aria-hidden="true"><use href="#flower"/></svg><span class="brand-words"><strong>CHIKAS</strong><span>cosméticos</span></span></a>
+      <div class="header-note"><span class="status-dot"></span> A beleza tem lugar no seu supermercado.</div>
+      <a class="header-cta" href="#cadastro">Seja um revendedor <svg aria-hidden="true"><use href="#arrow"/></svg></a>
+    </header>
+    <main id="inicio">
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="pitch">
+          <div class="eyebrow"><span></span> CHIKAS NO SEU SUPERMERCADO</div>
+          <h1 id="hero-title"><span class="headline-white">Abasteça seu</span><span class="headline-orange">supermercado</span><span class="headline-white last-line">com Chikas <span class="headline-small">a preço<br>de fábrica.</span></span></h1>
+          <p class="intro">Leve para a sua seção de beleza shampoos, condicionadores, máscaras e finalizadores das linhas <strong>Desliza Liso</strong> e <strong>Livre Leve &amp; Solto.</strong></p>
+          <div class="product-stage" aria-label="Produtos Chikas Desliza Liso e Livre Leve e Solto">
+            <svg class="decor-flower flower-left" aria-hidden="true"><use href="#flower"/></svg>
+            <svg class="decor-flower flower-right" aria-hidden="true"><use href="#flower"/></svg>
+            <span class="spark spark-one" aria-hidden="true">✦</span><span class="spark spark-two" aria-hidden="true">✦</span>
+            <div class="price-sticker"><span>Pedido mínimo</span><strong><small>R$</small> 300</strong><span class="sticker-bottom">para compras com CNPJ</span></div>
+            <div class="products">
+              <div class="product product-one"><img src="assets/condicionador-liso-transparent.png" alt="Condicionador Desliza Liso" width="1000" height="1000"></div>
+              <div class="product product-two"><img src="assets/finalizador-liso-transparent.png" alt="Finalizador Desliza Liso" width="1000" height="1000"></div>
+              <div class="product product-three"><img src="assets/shampoo-liso-transparent.png" alt="Shampoo Desliza Liso" width="1000" height="1000"></div>
+              <div class="product product-four"><img src="assets/mascara-liso-transparent.png" alt="Máscara Desliza Liso" width="1000" height="1000"></div>
+              <div class="product product-five"><img src="assets/balm-solto-transparent.png" alt="Balm Livre Leve & Solto" width="1000" height="1000"></div>
+              <div class="product product-six"><img src="assets/shampoo-solto-transparent.png" alt="Shampoo Livre Leve & Solto" width="1000" height="1000"></div>
+            </div>
+            <div class="line-tags"><span>DESLIZA LISO</span><span>LIVRE LEVE &amp; SOLTO</span></div>
+          </div>
+        </div>
+        <aside class="form-card" id="cadastro" aria-labelledby="form-title">
+          <div class="form-topline"><span>VAMOS COLOCAR CHIKAS NA SUA PRATELEIRA?</span><svg aria-hidden="true"><use href="#flower"/></svg></div>
+          <div class="form-content">
+            <div class="form-heading"><span class="step-label">SEU PRÓXIMO SUCESSO COMEÇA AQUI</span><h2 id="form-title">Receba o catálogo<br>para <span>revenda.</span></h2><p>Preencha o formulário para receber o catálogo e as condições de revenda pelo WhatsApp.</p></div>
+            <form id="lead-form">
+              <div class="field"><label for="name">Seu nome <span>*</span></label><input id="name" name="name" autocomplete="name" placeholder="Como podemos te chamar?" minlength="2" maxlength="100" required></div>
+              <div class="field"><label for="market">Nome do supermercado <span>*</span></label><input id="market" name="supermarket" autocomplete="organization" placeholder="Nome do seu estabelecimento" minlength="2" maxlength="150" required></div>
+              <div class="field"><label for="phone">WhatsApp com DDD <span>*</span></label><div class="input-icon"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-12 7L3 20l1.5-5A8 8 0 1 1 20 11.5Z"/><path d="M8 7c0 4 2 6 6 7l2-2-3-1-1 1-2-2 1-1-2-2Z"/></svg><input id="phone" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="(00) 00000-0000" maxlength="15" required></div></div>
+              <div class="location-fields"><div class="field"><label for="city">Cidade <span>*</span></label><input id="city" name="city" autocomplete="address-level2" placeholder="Sua cidade" minlength="2" maxlength="100" required></div><div class="field"><label for="state">UF <span>*</span></label><select id="state" name="state" autocomplete="address-level1" required><option value="" disabled selected>UF</option><option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option><option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option><option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option><option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option><option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option><option>SE</option><option>TO</option></select></div></div>
+              <div class="field"><label for="cnpj">CNPJ do estabelecimento <span>*</span></label><input id="cnpj" name="cnpj" inputmode="text" autocapitalize="characters" spellcheck="false" placeholder="00.000.000/0000-00" maxlength="18" required></div>
+              <button class="submit-button" type="submit"><span>Quero receber o catálogo</span><svg aria-hidden="true"><use href="#arrow"/></svg></button>
+              <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
+              <p class="contact-note"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Seus dados serão usados para entrar em contato<br class="desktop-break"> sobre o catálogo e as condições de revenda.</p>
+            </form>
+            <div class="success-message" id="success-message" tabindex="-1" hidden><div class="success-icon">✓</div><h3>Cadastro recebido!</h3><p>Nossa equipe vai entrar em contato pelo WhatsApp informado.</p></div>
+          </div>
+          <div class="form-footer"><span>✦</span> Pedido mínimo de <strong>R$ 300</strong> · Compras com CNPJ</div>
+        </aside>
+      </section>
+      <section class="benefit-strip" aria-label="Condições de revenda"><div class="wrap"><span>PREÇO DE FÁBRICA</span><svg aria-hidden="true"><use href="#flower"/></svg><span>BELEZA NA SUA PRATELEIRA</span><svg aria-hidden="true"><use href="#flower"/></svg><span>PEDIDOS A PARTIR DE R$ 300</span><svg aria-hidden="true"><use href="#flower"/></svg><span>CHIKAS NO SEU MERCADO</span></div></section>
+    </main>
+    <footer class="footer wrap"><a class="brand brand-small" href="#inicio" aria-label="Chikas cosméticos — início"><svg aria-hidden="true"><use href="#flower"/></svg><span class="brand-words"><strong>CHIKAS</strong><span>cosméticos</span></span></a><p>Desliza Liso <span>•</span> Livre Leve &amp; Solto</p><span class="footer-note">Uma nova beleza para o seu negócio.</span></footer>
+  </div>
+</body>
+</html>
